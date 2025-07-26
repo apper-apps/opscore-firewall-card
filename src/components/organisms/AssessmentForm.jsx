@@ -60,7 +60,7 @@ const AssessmentForm = ({ questions, onComplete, initialResponses = {} }) => {
     }
   }
 
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
     if (answeredQuestions !== totalQuestions) {
       toast.warning("Please answer all questions before submitting.")
       return
@@ -68,7 +68,7 @@ const AssessmentForm = ({ questions, onComplete, initialResponses = {} }) => {
 
     setIsSubmitting(true)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      // Pass responses to parent component for database submission
       onComplete(Object.values(responses))
       toast.success("Assessment completed successfully!")
     } catch (error) {

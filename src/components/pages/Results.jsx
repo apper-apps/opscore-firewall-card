@@ -22,7 +22,7 @@ const Results = () => {
   }, [location.state])
 
   const calculateResults = async () => {
-    try {
+try {
       setError("")
       setLoading(true)
       
@@ -31,8 +31,6 @@ const Results = () => {
         setError("No assessment data found. Please complete an assessment first.")
         return
       }
-
-      await new Promise(resolve => setTimeout(resolve, 1000))
       
       const assessment = await assessmentService.getById(assessmentId)
       const questions = await questionService.getAll()
@@ -42,13 +40,25 @@ const Results = () => {
         return
       }
 
+      // Parse responses from database (stored as JSON string)
+      let parsedResponses = assessment.responses
+      if (typeof assessment.responses === 'string') {
+        try {
+          parsedResponses = JSON.parse(assessment.responses)
+        } catch (parseError) {
+          console.error("Error parsing responses:", parseError)
+          setError("Assessment data format error.")
+          return
+        }
+      }
+
       // Calculate scores by category
       const categoryScores = {}
       const categories = ["Process Efficiency", "Technology & Systems", "Team Performance"]
       
       categories.forEach(category => {
         const categoryQuestions = questions.filter(q => q.category === category)
-        const categoryResponses = assessment.responses.filter(r => 
+        const categoryResponses = parsedResponses.filter(r => 
           categoryQuestions.some(q => q.Id === r.questionId)
         )
         

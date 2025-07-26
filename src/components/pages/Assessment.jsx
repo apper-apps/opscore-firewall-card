@@ -16,11 +16,10 @@ const Assessment = () => {
     loadQuestions()
   }, [])
 
-  const loadQuestions = async () => {
+const loadQuestions = async () => {
     try {
       setError("")
       setLoading(true)
-      await new Promise(resolve => setTimeout(resolve, 800))
       const data = await questionService.getAll()
       setQuestions(data)
     } catch (err) {
@@ -30,18 +29,22 @@ const Assessment = () => {
     }
   }
 
-  const handleComplete = async (responses) => {
+const handleComplete = async (responses) => {
     try {
       const assessment = {
-        Id: Date.now(),
+        Name: `Assessment ${new Date().toLocaleDateString()}`,
         startedAt: new Date().toISOString(),
         completedAt: new Date().toISOString(),
         responses: responses,
         status: "completed"
       }
 
-      await assessmentService.create(assessment)
-      navigate("/results", { state: { assessmentId: assessment.Id } })
+      const savedAssessment = await assessmentService.create(assessment)
+      if (savedAssessment) {
+        navigate("/results", { state: { assessmentId: savedAssessment.Id } })
+      } else {
+        console.error("Failed to save assessment")
+      }
     } catch (err) {
       console.error("Failed to save assessment:", err)
     }
