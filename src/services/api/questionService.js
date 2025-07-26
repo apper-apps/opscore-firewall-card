@@ -1,3 +1,4 @@
+import mockQuestions from '@/services/mockData/questions.json';
 
 class QuestionService {
   constructor() {
@@ -11,7 +12,7 @@ class QuestionService {
   }
 
   async getAll() {
-    try {
+try {
       const params = {
         fields: [
           { field: { Name: "Name" } },
@@ -37,18 +38,26 @@ class QuestionService {
       const response = await this.apperClient.fetchRecords(this.tableName, params);
       
       if (!response.success) {
-        console.error(response.message);
-        return [];
+        console.error("Database fetch failed, using mock data:", response.message);
+        return mockQuestions;
       }
 
-      return response.data || [];
+      // If database returns empty results, fall back to mock data
+      if (!response.data || response.data.length === 0) {
+        console.log("No questions found in database, using mock data");
+        return mockQuestions;
+      }
+
+      console.log("Successfully loaded questions from database");
+      return response.data;
     } catch (error) {
       if (error?.response?.data?.message) {
-        console.error("Error fetching questions:", error?.response?.data?.message);
+        console.error("Error fetching questions from database, using mock data:", error?.response?.data?.message);
       } else {
-        console.error(error.message);
+        console.error("Error fetching questions from database, using mock data:", error.message);
       }
-      return [];
+      // Return mock data as fallback
+      return mockQuestions;
     }
   }
 
