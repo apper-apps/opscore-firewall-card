@@ -14,23 +14,23 @@ class QuestionService {
   async getAll() {
 try {
       const params = {
-        fields: [
-          { field: { Name: "Name" } },
-          { field: { Name: "Tags" } },
-          { field: { Name: "Owner" } },
-          { field: { Name: "category" } },
-          { field: { Name: "text" } },
-          { field: { Name: "order" } },
-          { field: { Name: "weight" } },
-          { field: { Name: "CreatedOn" } },
-          { field: { Name: "CreatedBy" } },
-          { field: { Name: "ModifiedOn" } },
-          { field: { Name: "ModifiedBy" } }
+fields: [
+          { "field": { "Name": "Name" } },
+          { "field": { "Name": "Tags" } },
+          { "field": { "Name": "Owner" } },
+          { "field": { "Name": "category" } },
+          { "field": { "Name": "text" } },
+          { "field": { "Name": "order" } },
+          { "field": { "Name": "weight" } },
+          { "field": { "Name": "CreatedOn" } },
+          { "field": { "Name": "CreatedBy" } },
+          { "field": { "Name": "ModifiedOn" } },
+          { "field": { "Name": "ModifiedBy" } }
         ],
         orderBy: [
-          {
-            fieldName: "order",
-            sorttype: "ASC"
+{
+            "fieldName": "order",
+            "sorttype": "ASC"
           }
         ]
       };
@@ -63,19 +63,19 @@ try {
 
   async getById(id) {
     try {
-      const params = {
+const params = {
         fields: [
-          { field: { Name: "Name" } },
-          { field: { Name: "Tags" } },
-          { field: { Name: "Owner" } },
-          { field: { Name: "category" } },
-          { field: { Name: "text" } },
-          { field: { Name: "order" } },
-          { field: { Name: "weight" } },
-          { field: { Name: "CreatedOn" } },
-          { field: { Name: "CreatedBy" } },
-          { field: { Name: "ModifiedOn" } },
-          { field: { Name: "ModifiedBy" } }
+          { "field": { "Name": "Name" } },
+          { "field": { "Name": "Tags" } },
+          { "field": { "Name": "Owner" } },
+          { "field": { "Name": "category" } },
+          { "field": { "Name": "text" } },
+          { "field": { "Name": "order" } },
+          { "field": { "Name": "weight" } },
+          { "field": { "Name": "CreatedOn" } },
+          { "field": { "Name": "CreatedBy" } },
+          { "field": { "Name": "ModifiedOn" } },
+          { "field": { "Name": "ModifiedBy" } }
         ]
       };
 
@@ -100,30 +100,30 @@ try {
   async getByCategory(category) {
     try {
       const params = {
-        fields: [
-          { field: { Name: "Name" } },
-          { field: { Name: "Tags" } },
-          { field: { Name: "Owner" } },
-          { field: { Name: "category" } },
-          { field: { Name: "text" } },
-          { field: { Name: "order" } },
-          { field: { Name: "weight" } },
-          { field: { Name: "CreatedOn" } },
-          { field: { Name: "CreatedBy" } },
-          { field: { Name: "ModifiedOn" } },
-          { field: { Name: "ModifiedBy" } }
+fields: [
+          { "field": { "Name": "Name" } },
+          { "field": { "Name": "Tags" } },
+          { "field": { "Name": "Owner" } },
+          { "field": { "Name": "category" } },
+          { "field": { "Name": "text" } },
+          { "field": { "Name": "order" } },
+          { "field": { "Name": "weight" } },
+          { "field": { "Name": "CreatedOn" } },
+          { "field": { "Name": "CreatedBy" } },
+          { "field": { "Name": "ModifiedOn" } },
+          { "field": { "Name": "ModifiedBy" } }
         ],
-        where: [
+where: [
           {
-            FieldName: "category",
-            Operator: "EqualTo",
-            Values: [category]
+            "FieldName": "category",
+            "Operator": "EqualTo",
+            "Values": [category]
           }
         ],
-        orderBy: [
+orderBy: [
           {
-            fieldName: "order",
-            sorttype: "ASC"
+            "fieldName": "order",
+            "sorttype": "ASC"
           }
         ]
       };
