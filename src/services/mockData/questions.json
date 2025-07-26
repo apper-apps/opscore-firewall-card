@@ -1,0 +1,107 @@
+[
+  {
+    "Id": 1,
+    "category": "Process Efficiency",
+    "text": "How well are your current workflows optimized and streamlined?",
+    "order": 1,
+    "weight": 1
+  },
+  {
+    "Id": 2,
+    "category": "Process Efficiency",
+    "text": "How effectively do you measure and track process performance?",
+    "order": 2,
+    "weight": 1
+  },
+  {
+    "Id": 3,
+    "category": "Process Efficiency",
+    "text": "How well are standard operating procedures documented and followed?",
+    "order": 3,
+    "weight": 1
+  },
+  {
+    "Id": 4,
+    "category": "Process Efficiency",
+    "text": "How effectively do you identify and eliminate process bottlenecks?",
+    "order": 4,
+    "weight": 1
+  },
+  {
+    "Id": 5,
+    "category": "Process Efficiency",
+    "text": "How well do you implement process automation where appropriate?",
+    "order": 5,
+    "weight": 1
+  },
+  {
+    "Id": 6,
+    "category": "Technology & Systems",
+    "text": "How current and effective is your technology infrastructure?",
+    "order": 1,
+    "weight": 1
+  },
+  {
+    "Id": 7,
+    "category": "Technology & Systems",
+    "text": "How well integrated are your various business systems?",
+    "order": 2,
+    "weight": 1
+  },
+  {
+    "Id": 8,
+    "category": "Technology & Systems",
+    "text": "How effectively do you use data analytics for decision making?",
+    "order": 3,
+    "weight": 1
+  },
+  {
+    "Id": 9,
+    "category": "Technology & Systems",
+    "text": "How well do your digital tools support operational efficiency?",
+    "order": 4,
+    "weight": 1
+  },
+  {
+    "Id": 10,
+    "category": "Technology & Systems",
+    "text": "How robust is your data security and backup systems?",
+    "order": 5,
+    "weight": 1
+  },
+  {
+    "Id": 11,
+    "category": "Team Performance",
+    "text": "How effectively does your team communicate and collaborate?",
+    "order": 1,
+    "weight": 1
+  },
+  {
+    "Id": 12,
+    "category": "Team Performance",
+    "text": "How well are team roles and responsibilities defined?",
+    "order": 2,
+    "weight": 1
+  },
+  {
+    "Id": 13,
+    "category": "Team Performance",
+    "text": "How effectively do you provide training and development opportunities?",
+    "order": 3,
+    "weight": 1
+  },
+  {
+    "Id": 14,
+    "category": "Team Performance",
+    "text": "How well do you measure and manage team performance?",
+    "order": 4,
+    "weight": 1
+  },
+  {
+    "Id": 15,
+    "category": "Team Performance",
+    "text": "How effectively do you motivate and engage your team members?",
+    "order": 5,
+    "weight": 1
+  }
+]
